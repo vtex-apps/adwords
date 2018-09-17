@@ -2,7 +2,7 @@ import { Component } from 'react'
 
 import { Helmet } from 'render'
 
-import { PixelAppInterface } from 'vtex.store/PixelContext'
+import { Pixel } from 'vtex.store/PixelContext'
 
 const APP_LOCATOR = 'vtex.adwords'
 
@@ -58,4 +58,4 @@ Adwords.contextTypes = {
   context: PropTypes.object
 }
 
-export default PixelAppInterface(Adwords)
+export default Pixel(Adwords)
