@@ -24,17 +24,19 @@ class Adwords extends Component {
     return adwordsID 
   }
 
-  productView = (event) => {
-    console.log(">>> Adwords >>> Product view: ", event)
-    const skuId = event.products[0].id
-    this.gtag({
-      event: 'page_view',
-      send_to: this.adwordsID,
-      ecomm_prodid: skuId
-    })
+  productView = event => {
+    const { products } = event
+    if (products && products.length > 0) {
+      const skuId = event.products[0].id
+      this.gtag({
+        event: 'page_view',
+        send_to: this.adwordsID,
+        ecomm_prodid: skuId
+      })
+    }
   }
 
-  departmentView = (event) => {
+  departmentView = event => {
     console.log(">>> Adwords >>> Department View: ", event)
   }
 
@@ -47,7 +49,7 @@ class Adwords extends Component {
   render() {
     return (
       <Helmet>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${this.adwordsID}`}></script>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${this.adwordsID}`} />
       </Helmet>
     )
   }
@@ -55,7 +57,7 @@ class Adwords extends Component {
 
 Adwords.contextTypes = {
   getSettings: PropTypes.func,
-  context: PropTypes.object
+  context: PropTypes.object,
 }
 
 export default Pixel(Adwords)
