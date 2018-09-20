@@ -30,3 +30,5 @@
         }
       }
     }
+
+See an example in [Dreamstore](https://github.com/vtex-apps/dreamstore/blob/master/pages/pages.json).

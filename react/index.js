@@ -1,12 +1,13 @@
 import { Component } from 'react'
-
 import { Helmet } from 'render'
-
 import { Pixel } from 'vtex.store/PixelContext'
 
 const APP_LOCATOR = 'vtex.adwords'
 
-class Adwords extends Component {
+/**
+ * 
+ */
+class GoogleAdwords extends Component {
   constructor(props) {
     super(props)
     this.props.subscribe(this)
@@ -60,4 +61,4 @@ Adwords.contextTypes = {
   context: PropTypes.object,
 }
 
-export default Pixel(Adwords)
+export default Pixel(GoogleAdwords)
