@@ -5,7 +5,10 @@ import { Pixel } from 'vtex.store/PixelContext'
 const APP_LOCATOR = 'vtex.adwords'
 
 /**
- * 
+ * Component that encapsulate the communication to
+ * the GoogleAdwords and listen for events comming
+ * from the store through the Pixel HOC. 
+ * It injects the gtag script to the HTML Head.
  */
 class GoogleAdwords extends Component {
   constructor(props) {
@@ -27,14 +30,15 @@ class GoogleAdwords extends Component {
 
   productView = event => {
     const { products } = event
+    let skuId = null
     if (products && products.length > 0) {
-      const skuId = event.products[0].id
-      this.gtag({
-        event: 'page_view',
-        send_to: this.adwordsID,
-        ecomm_prodid: skuId
-      })
+      skuId = event.products[0].id
     }
+    this.gtag({
+      event: 'page_view',
+      send_to: this.adwordsID,
+      ecomm_prodid: skuId
+    })
   }
 
   departmentView = event => {
@@ -57,7 +61,7 @@ class GoogleAdwords extends Component {
 }
 
 Adwords.contextTypes = {
-  getSettings: PropTypes.func,
+  /** Object with the app context */
   context: PropTypes.object,
 }
 
