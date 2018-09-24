@@ -17,7 +17,7 @@ class GoogleAdwords extends Component {
   }
   
   gtag(data) {
-    dataLayer.push(data)
+    window.dataLayer.push(data)
   }
   
   get adwordsID() {
