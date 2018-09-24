@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { Helmet } from 'render'
 import { Pixel } from 'vtex.store/PixelContext'
 
-const APP_LOCATOR = 'vtex.adwords'
+const APP_LOCATOR = 'vtex.google-adwords'
 
 /**
  * Component that encapsulate the communication to
@@ -32,17 +32,13 @@ class GoogleAdwords extends Component {
     const { products } = event
     let skuId = null
     if (products && products.length > 0) {
-      skuId = event.products[0].id
+      skuId = products[0].id
     }
     this.gtag({
-      event: 'page_view',
+      event: 'view_item',
       send_to: this.adwordsID,
       ecomm_prodid: skuId
     })
-  }
-
-  departmentView = event => {
-    console.log(">>> Adwords >>> Department View: ", event)
   }
 
   componentDidMount() {
@@ -60,9 +56,9 @@ class GoogleAdwords extends Component {
   }
 }
 
-Adwords.contextTypes = {
-  /** Object with the app context */
-  context: PropTypes.object,
+GoogleAdwords.contextTypes = {
+  /** Function to bind the APP Settings. */
+  getSettings: PropTypes.func,
 }
 
 export default Pixel(GoogleAdwords)
