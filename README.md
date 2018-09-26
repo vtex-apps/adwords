@@ -4,7 +4,7 @@
 
 2 - Add the following line to your store manifest:
 >    
-    "vtex.adwords": "0.x"
+    "vtex.google-adwords": "0.x"
 
 3 - Add the following code to your store pages.json:
 >
@@ -23,8 +23,8 @@
           "pixel": {
             "component": "vtex.render-runtime/ExtensionContainer"
           },
-          "pixel/adwords": {
-            "component": "vtex.adwords/index"
+          "pixel/google-adwords": {
+            "component": "vtex.google-adwords/index"
           },
           ...
         }
