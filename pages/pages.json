@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "google-adwords": {
+      "path": "/_v/google-adwords"
+    }
+  },
+  "extensions": {
+    "google-adwords": {
+      "component": "index"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "google-adwords",
+  "vendor": "vtex",
+  "version": "0.1.0",
+  "title": "Google Adwords",
+  "description": "Google Adwords",
+  "mustUpdateAt": "2019-04-03",
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "builders": {
+    "react": "2.x",
+    "pages": "0.x"
+  },
+  "dependencies": {
+    "vtex.store": "1.x"
+  },
+  "settingsSchema": {
+    "title": "Google Adwords",
+    "type": "object",
+    "properties": {
+      "adwordsID": {
+        "title": "Google Adwords",
+        "type": "string",
+        "description": "Enter the ID (AW-XXXX) from your Google Adwords"
+      }
+    }
+  }
+}
