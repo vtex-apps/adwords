@@ -12,7 +12,7 @@ interface Props {
 /**
  * Component that encapsulate the communication to
  * the GoogleAdwords and listen for events comming
- * from the store through the Pixel HOC. 
+ * from the store through the Pixel HOC.
  * It injects the gtag script to the HTML Head.
  */
 class GoogleAdwords extends Component<Props> {
@@ -31,11 +31,11 @@ class GoogleAdwords extends Component<Props> {
   public gtag(data: any) {
     window.dataLayer.push(data)
   }
-  
-  get adwordsID() {
-    const { adwordsID } = this.context.getSettings(APP_LOCATOR) || { adwordsID: undefined } 
 
-    return adwordsID 
+  get adwordsID() {
+    const { adwordsID } = this.context.getSettings(APP_LOCATOR) || { adwordsID: undefined }
+
+    return adwordsID
   }
 
   public productView = (event: any) => {
@@ -65,6 +65,11 @@ class GoogleAdwords extends Component<Props> {
     if (this.unsubscribe) {
       this.unsubscribe()
     }
+  }
+
+  public shouldComponentUpdate() {
+    // should only be rendered once
+    return false
   }
 
   public render() {
