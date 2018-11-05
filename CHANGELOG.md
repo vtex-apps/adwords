@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0] - 2018-11-05
+### Changed
+- Move app to typescript.
+
 ## [0.1.0] - 2018-09-26
 ### Added
  - MVP of `Google Adwords`
