@@ -6,7 +6,9 @@
   },
   "extensions": {
     "store/pixel/google-adwords": {
-      "component": "index"
+      "component": "index",
+      "shouldRender": false,
+      "ssr": false
     }
   }
 }
