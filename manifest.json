@@ -29,7 +29,7 @@
     "title": "Google Adwords",
     "type": "object",
     "properties": {
-      "adwordsID": {
+      "adwordsId": {
         "title": "Google Adwords",
         "type": "string",
         "description": "Enter the ID (AW-XXXX) from your Google Adwords"

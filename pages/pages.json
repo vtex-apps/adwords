@@ -5,7 +5,7 @@
     }
   },
   "extensions": {
-    "google-adwords": {
+    "store/pixel/google-adwords": {
       "component": "index"
     }
   }
