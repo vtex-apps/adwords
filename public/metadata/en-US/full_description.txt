@@ -1,0 +1,14 @@
+## About
+
+Google Adwords is an app for tracking the activities of visitors to your ecommerce. Tool used to evaluate the effectiveness of your ads.
+To see all the releases, [access the changelog](https://github.com/vtex-apps/google-adwords/blob/master/CHANGELOG.md)
+
+## Features 
+
+- Integration of your VTEX store with Google Adwords.
+- A simple way to analyze your audience.
+
+## How to configure
+
+The required configuration will be to add the Adwords ID into your account. In the Admin, go to **Apps -> Google Adwords** and add the ID in the available field.
+Learn more about the app [on the Github README.](https://github.com/vtex-apps/google-adwords/blob/master/README.md)
