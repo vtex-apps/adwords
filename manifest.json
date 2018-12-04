@@ -1,7 +1,7 @@
 {
   "name": "google-adwords",
   "vendor": "vtex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Google Adwords",
   "description": "Google Adwords",
   "mustUpdateAt": "2019-04-03",
@@ -14,6 +14,13 @@
   "builders": {
     "react": "2.x",
     "pages": "0.x"
+  },
+  "billingOptions": {
+    "termsURL": "",
+    "support": {
+      "url": "https://support.vtex.com/hc/requests"
+    },
+    "free": true
   },
   "dependencies": {
     "vtex.store": "1.x"
