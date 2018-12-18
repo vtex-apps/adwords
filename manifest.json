@@ -12,8 +12,7 @@
     "postreleasy": "vtex publish --verbose"
   },
   "builders": {
-    "react": "2.x",
-    "pages": "0.x"
+    "react": "2.x"
   },
   "billingOptions": {
     "termsURL": "",
@@ -23,7 +22,7 @@
     "free": true
   },
   "dependencies": {
-    "vtex.store": "1.x"
+    "vtex.pixel-manager": "0.x"
   },
   "settingsSchema": {
     "title": "Google Adwords",
