@@ -12,6 +12,12 @@ script.async = true
 document.head!.prepend(script)
 
 window.dataLayer = window.dataLayer || []
+function gtag() {
+  window.dataLayer.push(arguments)
+}
+
+gtag('js', new Date())
+gtag('config', adwordsId)
 
 window.addEventListener('message', e => {
   switch (e.data.eventName) {
@@ -19,7 +25,7 @@ window.addEventListener('message', e => {
       const { product } = e.data
       const skuId = product.id
 
-      window.dataLayer.push({
+      gtag({
         ecomm_prodid: skuId,
         event: 'view_item',
         send_to: adwordsId,
