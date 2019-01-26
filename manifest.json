@@ -5,14 +5,12 @@
   "title": "Google Adwords",
   "description": "Google Adwords",
   "mustUpdateAt": "2019-04-03",
-  "registries": [
-    "smartcheckout"
-  ],
   "scripts": {
+    "prereleasy": "bash lint.sh",
     "postreleasy": "vtex publish --verbose"
   },
   "builders": {
-    "react": "2.x"
+    "react": "3.x"
   },
   "billingOptions": {
     "termsURL": "",

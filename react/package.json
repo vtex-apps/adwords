@@ -1,9 +1,10 @@
 {
   "name": "vtex.google-adwords",
-  "version": "0.0.0",
-  "description": "Google Adwords.",
+  "version": "1.0.0",
+  "description": "Google Adwords pixel app",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "tsc --noEmit --pretty && tslint -c tslint.json './**/*.ts'"
   },
   "author": "VTEX",
   "license": "ISC",
