@@ -12,8 +12,9 @@ script.async = true
 document.head!.prepend(script)
 
 window.dataLayer = window.dataLayer || []
-function gtag() {
-  window.dataLayer.push(arguments)
+
+function gtag(...args: any[]) {
+  window.dataLayer.push(args)
 }
 
 gtag('js', new Date())
