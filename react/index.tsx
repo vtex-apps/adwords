@@ -1,3 +1,5 @@
+import { getSkuPrice } from './utils'
+
 const adwordsId = window.__SETTINGS__.adwordsId
 
 if (!adwordsId) {
@@ -25,11 +27,15 @@ window.addEventListener('message', e => {
   switch (e.data.eventName) {
     case 'vtex:productView': {
       const { product } = e.data
-      const skuId = product.id || product.productId
+      const productId = product.id || product.productId
+      const skuId = product.selectedSku || null
+      const productPrice = skuId ? getSkuPrice(product, skuId) : null
       const productDetails = {
-        ecomm_prodid: skuId,
-        event: 'view_item',
-        send_to: adwordsId,
+        'ecomm_prodid': skuId ? `${productId}_${skuId}`: productId,
+        'ecomm_pagetype': 'product',
+        'send_to': adwordsId,
+        'ecomm_totalvalue': +productPrice,
+        'ecomm_category': product.categories[0] || '',
       }
       console.log(productDetails)
       gtag(productDetails)

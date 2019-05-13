@@ -18,6 +18,7 @@
     "babel-preset-react-app": "^3.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "ramda": "^0.26.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-intl": "^2.4.0",
@@ -42,5 +43,8 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__test__/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy"
     }
+  },
+  "dependencies": {
+    "@types/ramda": "^0.26.8"
   }
 }
