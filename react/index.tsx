@@ -23,7 +23,6 @@ gtag('js', new Date())
 gtag('config', adwordsId)
 
 window.addEventListener('message', e => {
-  debugger
   switch (e.data.eventName) {
     case 'vtex:productView': {
       const { product } = e.data
