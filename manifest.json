@@ -31,11 +31,19 @@
     "title": "Google Adwords",
     "type": "object",
     "properties": {
-      "adwordsId": {
-        "title": "Google Adwords",
+      "conversionId": {
+        "title": "Conversion ID",
         "type": "string",
-        "description": "Enter the ID (AW-XXXX) from your Google Adwords"
+        "description": "Enter the Conversion ID (AW-XXXX) from your Google Adwords"
+      },
+      "conversionLabel": {
+        "title": "Conversion Label",
+        "type": "string",
+        "description": "Enter the Conversion Label from your Google Adwords"
       }
-    }
+    },
+    "required": [
+      "conversionId"
+    ]
   }
 }

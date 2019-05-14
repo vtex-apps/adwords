@@ -1,14 +1,15 @@
 import { getSkuPrice } from './utils'
 
-const adwordsId = window.__SETTINGS__.adwordsId
+const conversionId = window.__SETTINGS__.conversionId
+const conversionLabel = window.__SETTINGS__.conversionLabel
 
-if (!adwordsId) {
+if (!conversionId) {
   throw new Error('Warning: No Google Adwords ID is defined. To setup the app, go to your admin.')
 }
 
 const script = document.createElement('script')
 
-script.src = `https://www.googletagmanager.com/gtag/js?id=${adwordsId}`
+script.src = `https://www.googletagmanager.com/gtag/js?id=${conversionId}`
 script.async = true
 
 document.head!.prepend(script)
@@ -20,7 +21,7 @@ function gtag(...args: any[]) {
 }
 
 gtag('js', new Date())
-gtag('config', adwordsId)
+gtag('config', conversionId)
 
 window.addEventListener('message', e => {
   switch (e.data.eventName) {
@@ -32,7 +33,7 @@ window.addEventListener('message', e => {
       const productDetails = {
         'ecomm_prodid': skuId ? `${productId}_${skuId}`: productId,
         'ecomm_pagetype': 'product',
-        'send_to': adwordsId,
+        'send_to': conversionId,
         'ecomm_totalvalue': +productPrice,
         'ecomm_category': product.categories[0] || '',
       }
@@ -44,7 +45,7 @@ window.addEventListener('message', e => {
     case 'vtex:orderPlaced': {
       const conversionObject = {
         event: 'conversion',
-        send_to: adwordsId,
+        send_to: conversionLabel ? `${conversionId}/${conversionLabel}`: conversionId,
         value: e.data.transactionTotal || 0,
         currency: e.data.transactionCurrency || 'BRL',
         transaction_id: e.data.transactionId || '',
