@@ -10,5 +10,5 @@ Para ver todos los lanzamientos, [acesse o changelog](https://github.com/vtex-ap
 
 ## Cómo configurar 
 
-Sólo la configuración necesaria será agregar el Adwords ID en su cuenta. En el Admin, acceda a Apps -> Google Adwords y añada el ID en el campo disponible.
+Sólo la configuración necesaria será agregar el Conversion ID en su cuenta y puede incluir también el Conversion Label. En el Admin, acceda a Apps -> Google Adwords y añada el ID en el campo disponible.
 Obtenga más información acerca de app [en el Github readme.](https://github.com/vtex-apps/google-adwords/blob/master/README.md)
