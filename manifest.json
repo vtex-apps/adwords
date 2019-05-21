@@ -1,9 +1,9 @@
 {
-  "name": "google-adwords",
+  "name": "google-ads-tracker",
   "vendor": "vtex",
-  "version": "1.3.0",
-  "title": "Google Adwords",
-  "description": "Google Adwords",
+  "version": "1.0.0",
+  "title": "Google Ads Tracker",
+  "description": "Google Ads Tracker",
   "mustUpdateAt": "2019-04-03",
   "scripts": {
     "prereleasy": "bash lint.sh",
@@ -11,13 +11,6 @@
   },
   "builders": {
     "react": "3.x"
-  },
-  "billingOptions": {
-    "termsURL": "",
-    "support": {
-      "url": "https://support.vtex.com/hc/requests"
-    },
-    "free": true
   },
   "dependencies": {
     "vtex.pixel-manager": "0.x"
@@ -28,18 +21,18 @@
     }
   ],
   "settingsSchema": {
-    "title": "Google Adwords",
+    "title": "Google Ads Tracker",
     "type": "object",
     "properties": {
       "conversionId": {
         "title": "Conversion ID",
         "type": "string",
-        "description": "Enter the Conversion ID (AW-XXXX) from your Google Adwords"
+        "description": "Enter the Conversion ID (AW-XXXX) from your Google Ads"
       },
       "conversionLabel": {
         "title": "Conversion Label",
         "type": "string",
-        "description": "Enter the Conversion Label from your Google Adwords"
+        "description": "Enter the Conversion Label from your Google Ads"
       }
     },
     "required": [

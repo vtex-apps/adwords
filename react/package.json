@@ -1,7 +1,7 @@
 {
-  "name": "vtex.google-adwords",
+  "name": "vtex.google-ads-tracker",
   "version": "1.0.0",
-  "description": "Google Adwords pixel app",
+  "description": "Google Ads pixel app",
   "scripts": {
     "test": "jest",
     "lint": "tsc --noEmit --pretty && tslint -c tslint.json './**/*.ts'"
