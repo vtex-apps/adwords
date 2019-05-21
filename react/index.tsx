@@ -30,26 +30,27 @@ window.addEventListener('message', e => {
       const productId = product.id || product.productId
       const skuId = product.selectedSku || null
       const productPrice = skuId ? getSkuPrice(product, skuId) : null
+      const categories = (product.categories[0] || '').slice(1,-1).split('/').join(' | ')
       const productDetails = {
+        'send_to': conversionId,
         'ecomm_prodid': skuId ? `${productId}_${skuId}`: productId,
         'ecomm_pagetype': 'product',
-        'send_to': conversionId,
         'ecomm_totalvalue': +productPrice,
-        'ecomm_category': product.categories[0] || '',
+        'ecomm_category': categories,
       }
-      gtag(productDetails)
+      console.log(productDetails)
+      script.onload = () => gtag('event', 'pageView', productDetails)
       return
     }
 
     case 'vtex:orderPlaced': {
       const conversionObject = {
-        event: 'conversion',
         send_to: conversionLabel ? `${conversionId}/${conversionLabel}`: conversionId,
         value: e.data.transactionTotal || 0,
         currency: e.data.transactionCurrency || 'BRL',
         transaction_id: e.data.transactionId || '',
       }
-      gtag(conversionObject)
+      script.onload = () => gtag('event', 'conversion', conversionObject)
       return
     }
 
