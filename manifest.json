@@ -10,14 +10,18 @@
     "postreleasy": "vtex publish --verbose"
   },
   "builders": {
-    "react": "3.x"
+    "react": "3.x",
+    "node": "3.x"
   },
   "dependencies": {
     "vtex.pixel-manager": "0.x"
   },
   "policies": [
     {
-      "name": "pixel"
+      "name": "vtex.pixel-manager:pixel"
+    },
+    {
+      "name": "update-app-settings"
     }
   ],
   "settingsSchema": {
