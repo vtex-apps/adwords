@@ -28,7 +28,7 @@ const parseQuery = (req: any) => {
 }
 
 const parseVersion = () => {
-    return version.slice(0,2) + 'x'
+    return version.slice(0,1) + '.x'
 }
 
 export default {
@@ -45,7 +45,7 @@ export default {
             const appsClient = new Apps(ioContext)
             try {
             await appsClient.saveAppSettings(`${vendor}.${name}@${versionX}`, query)
-            res.body = { message: "GRACAS AOS DEUSES DA INFRA E AO PIMENTEL FUNCIONOU" }
+            res.body = { message: `${vendor}.${name}@${versionX} App configured successfully` }
             res.status = 200
             return res
             } catch ( err ) {

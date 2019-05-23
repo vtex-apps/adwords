@@ -50,6 +50,7 @@ window.addEventListener('message', e => {
         currency: e.data.transactionCurrency || 'BRL',
         transaction_id: e.data.transactionId || '',
       }
+      console.log(conversionObject)
       script.onload = () => gtag('event', 'conversion', conversionObject)
       return
     }
