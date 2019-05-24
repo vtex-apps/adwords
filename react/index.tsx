@@ -38,8 +38,10 @@ window.addEventListener('message', e => {
         'ecomm_totalvalue': +productPrice,
         'ecomm_category': categories,
       }
+      
       console.log(productDetails)
-      script.onload = () => gtag('event', 'pageView', productDetails)
+      gtag('event', 'pageView', productDetails)
+      
       return
     }
 
@@ -50,7 +52,10 @@ window.addEventListener('message', e => {
         currency: e.data.transactionCurrency || 'BRL',
         transaction_id: e.data.transactionId || '',
       }
-      script.onload = () => gtag('event', 'conversion', conversionObject)
+      
+      console.log(conversionObject)
+      gtag('event', 'conversion', conversionObject)
+      
       return
     }
 
