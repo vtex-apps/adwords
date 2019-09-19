@@ -1,4 +1,4 @@
-# How to add to your Store
+# Google Adwords
 
 Open the VTEX APP Store and install the app on your store.
 
